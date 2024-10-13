@@ -1,0 +1,238 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 2 - Registration Form</title>
+    <link href="style-1.css" rel="stylesheet">
+    <script src="validation.js" defer></script> <!-- Link to external JS file -->
+    <script>
+        // Function to display today's date
+        function displayDate() {
+            const today = new Date();
+            const date = today.toDateString();  // Format date as a readable string
+            document.getElementById("date").innerHTML = date;
+        }
+    </script>
+</head>
+<body onload="displayDate()">
+    <!-- Start of Header Section -->
+    <header>
+        <div id="banner">
+            <div id="title-date-container">
+                <div id="company-name">Validation Form</div>
+                <div id="date"></div>  <!-- Date will be dynamically added here -->
+            </div>
+        </div>
+    </header>
+
+    <form action="homework2-thankyou.html" id="registrationForm">
+        <!-- Block 1: Name and Date -->
+        <table>
+            <tr>
+                <td><label for="firstName">First Name:</label></td>
+                <td><input type="text" id="firstName" name="firstName" title="Enter your first name" pattern="[A-Za-z'-]{1,30}" required></td>
+            </tr>
+            <tr>
+                <td><label for="middleInitial">Middle Initial:</label></td>
+                <td><input type="text" id="middleInitial" name="middleInitial" title="Enter your middle initial (letters only)" pattern="[A-Za-z]{1}"></td>
+            </tr>
+            <tr>
+                <td><label for="lastName">Last Name:</label></td>
+                <td><input type="text" id="lastName" name="lastName" title="Enter your last name" pattern="[A-Za-z'-]{1,30}" required></td>
+            </tr>
+            <tr>
+                 <td><label for="dob">Date of Birth:</label></td>
+                 <td><input type="date" id="dob" name="dob" title="Enter your date of birth" required></td>
+            </tr>
+        </table>
+        
+        <!-- Block 2: Contact Info -->
+        <table>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" id="email" name="email" title="Enter a valid email (e.g., name@domain.com)" required></td>
+            </tr>
+            <tr>
+                <td><label for="phone">Phone Number:</label></td>
+                <td><input type="tel" id="phone" name="phone" title="Enter your phone number (e.g., 000-000-0000)" pattern="\d{3}-\d{3}-\d{4}" required></td>
+            </tr>
+        </table>
+
+        <!-- Block 3: Address -->
+        <table>
+            <tr>
+                <td><label for="address1">Address Line 1:</label></td>
+                <td><input type="text" id="address1" name="address1" title="Enter your address (2 to 30 characters)" minlength="2" maxlength="30" required></td>
+            </tr>
+            <tr>
+                <td><label for="address2">Address Line 2 (optional):</label></td>
+                <td><input type="text" id="address2" name="address2" title="Enter your address (optional)" minlength="2" maxlength="30"></td>
+            </tr>
+            <tr>
+                <td><label for="city">City:</label></td>
+                <td><input type="text" id="city" name="city" title="Enter your city (2 to 30 characters)" required></td>
+            </tr>
+            <tr>
+                <td><label for="state">State:</label></td>
+                <td>
+                    <select id="state" name="state" title="Select your state" required>
+                        <option value="" disabled selected>Select your state</option>
+                        <option value="AL">Alabama</option>
+                        <option value="AK">Alaska</option>
+                        <option value="AZ">Arizona</option>
+                        <option value="AR">Arkansas</option>
+                        <option value="CA">California</option>
+                        <option value="CO">Colorado</option>
+                        <option value="CT">Connecticut</option>
+                        <option value="DE">Delaware</option>
+                        <option value="FL">Florida</option>
+                        <option value="GA">Georgia</option>
+                        <option value="HI">Hawaii</option>
+                        <option value="ID">Idaho</option>
+                        <option value="IL">Illinois</option>
+                        <option value="IN">Indiana</option>
+                        <option value="IA">Iowa</option>
+                        <option value="KS">Kansas</option>
+                        <option value="KY">Kentucky</option>
+                        <option value="LA">Louisiana</option>
+                        <option value="ME">Maine</option>
+                        <option value="MD">Maryland</option>
+                        <option value="MA">Massachusetts</option>
+                        <option value="MI">Michigan</option>
+                        <option value="MN">Minnesota</option>
+                        <option value="MS">Mississippi</option>
+                        <option value="MO">Missouri</option>
+                        <option value="MT">Montana</option>
+                        <option value="NE">Nebraska</option>
+                        <option value="NV">Nevada</option>
+                        <option value="NH">New Hampshire</option>
+                        <option value="NJ">New Jersey</option>
+                        <option value="NM">New Mexico</option>
+                        <option value="NY">New York</option>
+                        <option value="NC">North Carolina</option>
+                        <option value="ND">North Dakota</option>
+                        <option value="OH">Ohio</option>
+                        <option value="OK">Oklahoma</option>
+                        <option value="OR">Oregon</option>
+                        <option value="PA">Pennsylvania</option>
+                        <option value="RI">Rhode Island</option>
+                        <option value="SC">South Carolina</option>
+                        <option value="SD">South Dakota</option>
+                        <option value="TN">Tennessee</option>
+                        <option value="TX">Texas</option>
+                        <option value="UT">Utah</option>
+                        <option value="VT">Vermont</option>
+                        <option value="VA">Virginia</option>
+                        <option value="WA">Washington</option>
+                        <option value="WV">West Virginia</option>
+                        <option value="WI">Wisconsin</option>
+                        <option value="WY">Wyoming</option>
+                        <option value="DC">Washington D.C.</option>
+                        <option value="PR">Puerto Rico</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="zip">Zip Code:</label></td>
+                <td><input type="text" id="zip" name="zip" title="Enter your zip code (5 or 9 digits)" pattern="\d{5}(-\d{4})?" required></td>
+            </tr>
+        </table>
+
+        <!-- Block 4: Checkboxes, Radio Buttons, and Text Area -->
+        <table>
+            <tr>
+                <td>Have you had (check all that apply):</td>
+                <td>
+                    <input type="checkbox" id="chickenpox" name="diseases" value="chickenpox">Chicken Pox<br>
+                    <input type="checkbox" id="measles" name="diseases" value="measles">Measles<br>
+                    <input type="checkbox" id="mumps" name="diseases" value="mumps">Mumps<br>
+                    <input type="checkbox" id="heartDisease" name="diseases" value="heartDisease">Heart Disease<br>
+                    <input type="checkbox" id="diabetic" name="diseases" value="diabetic">Diabetic<br>
+                    <input type="checkbox" id="covid19" name="diseases" value="covid19">Covid-19<br>
+                </td>
+            </tr>
+            <tr>
+                <td>Vaccinated?</td>
+                <td>
+                    <input type="radio" id="vaccinated-yes" name="vaccinated" value="yes">Yes
+                    <input type="radio" id="vaccinated-no" name="vaccinated" value="no">No
+                </td>
+            <tr>
+                <tr>
+    <td>Do you own your home?</td>
+    <td>
+        <input type="radio" id="own-yes" name="ownHome" value="yes">Yes
+        <input type="radio" id="own-no" name="ownHome" value="no">No
+    </td>
+</tr>
+<tr>
+    <td>Do you rent your home?</td>
+    <td>
+        <input type="radio" id="rent-yes" name="rentHome" value="yes">Yes
+        <input type="radio" id="rent-no" name="rentHome" value="no">No
+    </td>
+</tr>
+
+    <td>Desired Salary:</td>
+    <td>
+        <div class="slider-container">
+            <input type="range" id="salary" name="salary" min="20000" max="200000" step="1000" 
+                oninput="document.getElementById('salaryValue').innerText = this.value">
+            <span id="salaryValue">100000</span>
+        </div>
+    </td>
+</tr>
+<tr>
+    <td>Price Range for Home:</td>
+    <td>
+        <div class="slider-container">
+            <label for="minPrice">Min Price:</label>
+            <input type="range" id="minPrice" name="minPrice" min="50000" max="1000000" step="5000" value="150000"
+                oninput="document.getElementById('minPriceValue').innerText = this.value">
+            <span id="minPriceValue">150000</span>
+        </div>
+        <br>
+        <div class="slider-container">
+            <label for="maxPrice">Max Price:</label>
+            <input type="range" id="maxPrice" name="maxPrice" min="50000" max="1000000" step="5000" value="500000"
+                oninput="document.getElementById('maxPriceValue').innerText = this.value">
+            <span id="maxPriceValue">500000</span>
+        </div>
+    </td>
+</tr>
+                <td><label for="symptoms">Describe any symptoms (optional):</label></td>
+                <td>
+                    <textarea id="symptoms" name="symptoms" rows="4" cols="50" 
+                        placeholder="Describe your symptoms here (no double quotes allowed)"
+                        pattern='[^"]*'></textarea>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Block 5: User ID and Password -->
+        <table>
+            <tr>
+                <td><label for="userID">User ID:</label></td>
+                <td><input type="text" id="userID" name="userID" pattern="[A-Za-z_][A-Za-z0-9_-]{4,29}" title="5-30 characters, letters, numbers, dashes, no spaces" required></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input type="password" id="password" name="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).{8,30}" title="8-30 characters, 1 uppercase, 1 number, 1 special character" required></td>
+            </tr>
+            <tr>
+                <td><label for="confirmPassword">Confirm Password:</label></td>
+                <td><input type="password" id="confirmPassword" name="confirmPassword" required></td>
+            </tr>
+        </table>
+        
+        <!-- Review and Submit Buttons -->
+        <button type="button" onclick="reviewForm()">Review</button>
+        <button type="submit">Submit</button>
+        <button type="reset">Start Over</button>
+    </form>
+
+    <!-- Area to display the review data -->
+    <div id="reviewArea"></div>
+</body>
+</html>
