@@ -1,0 +1,88 @@
+ #banner {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: left;
+}
+
+#title-date-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+#company-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#date {
+    font-size: 18px;
+    text-align: right;
+}
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Adjust the gap between slider and number */
+}
+
+#salary {
+    width: 200px; /* Adjust the width of the slider if needed */
+}
+/* Add general styles for the form */
+form {
+    width: 100%; /* Full width for the form */
+    max-width: 600px; /* Adjust the form width for better readability */
+    margin: 0 auto; /* Center the form */
+    padding: 20px;
+    background-color: #f9f9f9; /* Optional: Light background for the form */
+    border: 1px solid #ccc; /* Optional: Border for the form */
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+
+/* Style the table to have more consistent spacing */
+table {
+    width: 100%;
+    margin-bottom: 20px; /* Add spacing between sections */
+}
+
+/* Style for labels and inputs */
+td {
+    padding: 10px 0; /* Add padding above and below each table row */
+}
+
+/* Align inputs and labels nicely */
+input, select, textarea {
+    width: 100%; /* Full width of the input fields */
+    padding: 8px;
+    margin: 5px 0;
+    box-sizing: border-box; /* Ensure padding doesn't affect the width */
+}
+
+/* Style for the salary slider and value */
+.slider-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust the gap between slider and number */
+}
+
+/* Buttons */
+button {
+    margin: 10px 5px; /* Add margin between buttons */
+    padding: 10px 15px;
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Style for Review Data Area */
+#reviewArea {
+    margin-top: 20px;
+}
